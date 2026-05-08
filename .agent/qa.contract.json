@@ -1,0 +1,11 @@
+{
+  "requiredCommands": ["npm run qa"],
+  "gates": [
+    {"name": "contract", "command": "npm run check:contract", "protects": ["site", "deployment", "payment"]},
+    {"name": "sections", "command": "npm run check:sections", "protects": ["narrative", "contract-to-dom"]},
+    {"name": "claims", "command": "npm run check:claims", "protects": ["approved claims", "demo disclosures"]},
+    {"name": "stripe", "command": "npm run check:stripe", "protects": ["payment link safety"]},
+    {"name": "links", "command": "npm run check:links", "protects": ["github pages base path", "assets", "routes"]},
+    {"name": "responsive", "command": "npm run test:responsive", "protects": ["mobile", "desktop", "cta", "overflow"]}
+  ]
+}
