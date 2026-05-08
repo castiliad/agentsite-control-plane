@@ -4,8 +4,8 @@
   "environment": "demo",
   "purpose": "Demonstrate a contract-driven control layer for agent-maintained revenue landing pages.",
   "audience": ["founders", "operators", "developers evaluating agent-maintained sites"],
-  "primaryCta": "View the live contract",
+  "primaryCta": "View contract source",
   "secondaryCta": "See the agent workflow",
-  "requiredSections": ["hero", "control-plane", "problem", "blocked-change", "workflow", "payment-contract", "qa", "cta"],
+  "requiredSections": ["hero", "problem", "control-plane", "blocked-change", "workflow", "payment-contract", "qa", "cta"],
   "contactEmail": "hello@example.com"
 }

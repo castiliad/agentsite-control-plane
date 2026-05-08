@@ -32,7 +32,11 @@ for (const file of htmlFiles) {
   $('[href]').each((_,el)=>attrs.push($(el).attr('href')));
   $('[src]').each((_,el)=>attrs.push($(el).attr('src')));
   for (const raw of attrs.filter(Boolean)) {
-    if (raw.startsWith('#') || raw.startsWith('mailto:') || raw.startsWith('tel:')) continue;
+    if (raw.startsWith('#')) {
+      if (raw.length > 1 && $(raw).length === 0) fail(`${file} has missing hash target: ${raw}`);
+      continue;
+    }
+    if (raw.startsWith('mailto:') || raw.startsWith('tel:')) continue;
     if (/^https?:\/\//.test(raw)) continue;
     if (raw.startsWith('/')) {
       if (!raw.startsWith(base)) fail(`${file} has root path outside base ${base}: ${raw}`);

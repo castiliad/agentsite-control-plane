@@ -13,7 +13,7 @@ try{
     if(!res.ok) fail(`${route} returned HTTP ${res.status}`);
   }
   const html=await (await fetch(`http://localhost:${port}${base}`)).text();
-  if(!html.includes('Let AI agents ship your landing pages')) fail('Homepage does not contain revised hero text');
+  if(!html.includes('Let AI agents ship landing pages')) fail('Homepage does not contain revised hero text');
   if(html.includes('undefined')) fail('Found undefined in HTML');
   console.log('SMOKE PASS');
 } finally { server.kill(); }

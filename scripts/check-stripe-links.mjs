@@ -13,9 +13,10 @@ function isPlaceholder(link){ return link.includes('PLACEHOLDER') || link.includ
 for (const href of [...ctaHrefs, ...stripeUrlsInHtml]) {
   if (href.startsWith('#')) continue;
   let url; try { url = new URL(href); } catch { fail(`Invalid payment href: ${href}`); }
-  if (url.hostname.includes('stripe.com') && !allowedHosts.has(url.hostname)) fail(`Stripe host not allowlisted: ${url.hostname}`);
+  if (!url.hostname.includes('stripe.com')) fail(`Payment CTA must not point to non-Stripe external URL: ${href}`);
+  if (!allowedHosts.has(url.hostname)) fail(`Stripe host not allowlisted: ${url.hostname}`);
   if (payment.mode === 'demo') {
-    if (url.hostname.includes('stripe.com') && !isPlaceholder(href)) fail(`Demo mode cannot expose live Stripe URL: ${href}`);
+    if (!isPlaceholder(href)) fail(`Demo mode cannot expose live Stripe URL: ${href}`);
   } else {
     if (!url.hostname.includes('stripe.com')) fail(`Live mode payment CTA must be Stripe URL: ${href}`);
     if (isPlaceholder(href)) fail(`Live mode cannot use placeholder/test/demo Stripe link: ${href}`);
