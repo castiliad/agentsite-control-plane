@@ -1,0 +1,13 @@
+{
+  "tone": "premium, calm, direct, technically credible",
+  "visualReference": "Vercel precision with Stripe-level gradient restraint and Linear-like dark surfaces; transformed, not cloned.",
+  "colors": {
+    "background": "#05070d",
+    "surface": "#0d111b",
+    "ink": "#f7f8ff",
+    "muted": "#9aa4b2",
+    "accent": "#8b5cf6",
+    "accent2": "#22d3ee"
+  },
+  "forbidden": ["generic AI SaaS slop", "fake testimonials", "fake metrics", "unsupported business claims"]
+}

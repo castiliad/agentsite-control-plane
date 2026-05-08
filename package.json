@@ -1,0 +1,28 @@
+{
+  "name": "agentsite-control-plane",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "qa": "npm run build && npm run check:contract && npm run check:stripe && npm run check:seo && npm run test:smoke && npm run test:responsive",
+    "check:contract": "node scripts/check-contract.mjs",
+    "check:stripe": "node scripts/check-stripe-links.mjs",
+    "check:seo": "node scripts/check-seo.mjs",
+    "test:smoke": "node scripts/smoke-dist.mjs",
+    "test:responsive": "playwright test"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.15.4",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/node": "^22.10.5",
+    "cheerio": "^1.1.2",
+    "serve": "^14.2.5"
+  }
+}

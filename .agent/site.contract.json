@@ -1,0 +1,11 @@
+{
+  "siteName": "AgentSite Control Plane",
+  "baseUrl": "https://agentsite-control-plane.netlify.app",
+  "environment": "demo",
+  "paymentMode": "demo",
+  "purpose": "Demonstrate a contract-driven workflow for agent-maintained landing pages with safe Stripe Payment Link support.",
+  "primaryCta": "View the deployable system",
+  "requiredSections": ["hero", "contract", "workflow", "payments", "qa", "cta"],
+  "contactEmail": "hello@example.com",
+  "forbiddenClaims": ["guaranteed revenue", "fully autonomous without review", "Stripe link changed without approval"]
+}

@@ -1,0 +1,12 @@
+{
+  "provider": "stripe_payment_link",
+  "mode": "demo",
+  "allowedHosts": ["buy.stripe.com", "checkout.stripe.com"],
+  "paymentLinks": ["https://buy.stripe.com/test_PLACEHOLDER"],
+  "agentRules": [
+    "Never change live Stripe links without explicit user approval.",
+    "Never invent pricing.",
+    "Fail QA if live payment mode uses a non-allowlisted URL.",
+    "Demo mode must visibly disclose that checkout is not live."
+  ]
+}

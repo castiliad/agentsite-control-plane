@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, isDemoPayment } from '../content/site';
+const ctaHref = isDemoPayment ? '#payment-contract' : site.stripeLink;
+---
+<BaseLayout>
+  <main>
+    <section id="hero" class="hero section-shell">
+      <nav class="nav" aria-label="Primary">
+        <a class="brand" href="/" aria-label="AgentSite home"><span class="brand-mark">A</span> AgentSite</a>
+        <a class="nav-link" href="#contract">Contract</a>
+      </nav>
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">GitHub → Netlify → Stripe, governed by contracts</p>
+          <h1>From approved contract to deployed site, with every step visible.</h1>
+          <p class="lede">AgentSite is a live, deployable pattern for professional landing pages that coding subagents can build, review, and maintain without guessing what matters.</p>
+          <div class="hero-actions">
+            <a class="button primary" href={ctaHref}>{isDemoPayment ? 'Inspect demo checkout rule' : 'Open Stripe checkout'}</a>
+            <a class="button secondary" href="#workflow">See the operating loop</a>
+          </div>
+          <p class="microcopy">{isDemoPayment ? 'Demo checkout is intentionally not live. Set STRIPE_PAYMENT_LINK to enable an approved Stripe Payment Link.' : 'Live payment URL is supplied by environment and checked by the payment contract.'}</p>
+        </div>
+        <aside class="status-card" aria-label="Deployment status summary">
+          <div class="card-topline"><span class="dot live"></span> Published artifact</div>
+          <dl>
+            <div><dt>Framework</dt><dd>Astro static</dd></div>
+            <div><dt>Deploy</dt><dd>Netlify</dd></div>
+            <div><dt>Payments</dt><dd>{isDemoPayment ? 'Demo-safe Stripe Link' : 'Live Stripe Link'}</dd></div>
+            <div><dt>Agent gates</dt><dd>Contract · SEO · Smoke · Responsive</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contract" class="section-shell split">
+      <div>
+        <p class="eyebrow">AgentSite Contract</p>
+        <h2>The site tells agents how to operate it.</h2>
+        <p>Every important constraint lives in machine-readable contracts before subagents touch code: purpose, offer, brand posture, payment rules, forbidden claims, and QA gates.</p>
+      </div>
+      <div class="code-panel" role="img" aria-label="Contract excerpt">
+<pre><code>site:
+  purpose: deploy paid landing pages
+payments:
+  provider: stripe_payment_link
+  rule: never change live links without approval
+quality_gates:
+  - build
+  - contract
+  - stripe_allowlist
+  - responsive</code></pre>
+      </div>
+    </section>
+
+    <section id="workflow" class="section-shell">
+      <p class="eyebrow">Subagent operating loop</p>
+      <h2>Parallel specialists, explicit review gates.</h2>
+      <div class="workflow-grid">
+        <article><span>01</span><h3>Planner</h3><p>Turns the brief and contracts into a bounded implementation plan.</p></article>
+        <article><span>02</span><h3>Designer</h3><p>Applies a professional visual system without inventing fake claims.</p></article>
+        <article><span>03</span><h3>Builder</h3><p>Implements in Astro with minimal JavaScript and clean components.</p></article>
+        <article><span>04</span><h3>Reviewers</h3><p>Check spec, brand, payments, SEO, smoke, and responsive behavior.</p></article>
+      </div>
+    </section>
+
+    <section id="payment-contract" class="section-shell payment-panel">
+      <div>
+        <p class="eyebrow">Stripe acceptance, without backend risk</p>
+        <h2>{isDemoPayment ? 'Checkout is demo-safe until you provide the real link.' : 'Checkout is live and contract-checked.'}</h2>
+        <p>First-stage sites use Stripe Payment Links, avoiding webhook and secret-key complexity until a site actually needs custom checkout logic.</p>
+      </div>
+      <a class="button primary" href={ctaHref}>{isDemoPayment ? 'Payment link placeholder active' : 'Open approved checkout'}</a>
+    </section>
+
+    <section id="qa" class="section-shell qa-grid">
+      <div><p class="eyebrow">Deploy blockers</p><h2>Useful autonomy needs tests that understand the business surface.</h2></div>
+      <ul class="checks" aria-label="QA gates">
+        <li>Contract fields present</li>
+        <li>Stripe domains allowlisted</li>
+        <li>Homepage smoke passes</li>
+        <li>SEO metadata present</li>
+        <li>No horizontal mobile overflow</li>
+        <li>CTA visible above the fold</li>
+      </ul>
+    </section>
+
+    <section id="cta" class="section-shell final-cta">
+      <p class="eyebrow">First deploy complete</p>
+      <h2>This is the starter artifact for the repeatable site factory.</h2>
+      <p>Next iteration: convert this repo into a reusable GitHub template and save the deployment process as a Hermes skill.</p>
+      <a class="button secondary" href="https://github.com/castiliad/agentsite-control-plane">View source on GitHub</a>
+    </section>
+  </main>
+</BaseLayout>

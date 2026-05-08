@@ -1,0 +1,9 @@
+{
+  "siteName": "AgentSite Control Plane",
+  "baseUrl": "https://agentsite-control-plane.netlify.app",
+  "environment": "demo",
+  "paymentMode": "demo",
+  "stripePaymentLinks": ["https://buy.stripe.com/test_PLACEHOLDER"],
+  "requiredSections": ["hero", "contract", "workflow", "payments", "qa", "cta"],
+  "contactEmail": "hello@example.com"
+}
