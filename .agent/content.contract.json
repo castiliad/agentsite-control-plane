@@ -1,0 +1,14 @@
+{
+  "approvedClaims": [
+    {"claim": "AgentSite uses contracts to guide agent edits", "status": "live", "evidence": ".agent/*.contract.json"},
+    {"claim": "The demo uses a safe placeholder checkout link", "status": "live", "evidence": ".agent/payment.contract.json"},
+    {"claim": "Netlify-ready", "status": "live", "evidence": "netlify.toml"},
+    {"claim": "GitHub Pages is the current live deployment", "status": "live", "evidence": ".agent/deployment.contract.json"}
+  ],
+  "forbiddenClaims": [
+    "guaranteed revenue",
+    "fully autonomous without review",
+    "live Netlify deploy",
+    "live Stripe checkout enabled"
+  ]
+}

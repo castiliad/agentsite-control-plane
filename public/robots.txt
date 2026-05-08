@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://castiliad.github.io/agentsite-control-plane/sitemap.xml

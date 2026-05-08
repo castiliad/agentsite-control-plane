@@ -1,11 +1,11 @@
 {
   "siteName": "AgentSite Control Plane",
-  "baseUrl": "https://castiliad.github.io/agentsite-control-plane",
+  "baseUrl": "https://castiliad.github.io/agentsite-control-plane/",
   "environment": "demo",
-  "paymentMode": "demo",
-  "purpose": "Demonstrate a contract-driven workflow for agent-maintained landing pages with safe Stripe Payment Link support.",
-  "primaryCta": "View the deployable system",
-  "requiredSections": ["hero", "contract", "workflow", "payments", "qa", "cta"],
-  "contactEmail": "hello@example.com",
-  "forbiddenClaims": ["guaranteed revenue", "fully autonomous without review", "Stripe link changed without approval"]
+  "purpose": "Demonstrate a contract-driven control layer for agent-maintained revenue landing pages.",
+  "audience": ["founders", "operators", "developers evaluating agent-maintained sites"],
+  "primaryCta": "View the live contract",
+  "secondaryCta": "See the agent workflow",
+  "requiredSections": ["hero", "control-plane", "problem", "blocked-change", "workflow", "payment-contract", "qa", "cta"],
+  "contactEmail": "hello@example.com"
 }

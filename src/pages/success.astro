@@ -1,6 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
-<BaseLayout title="Payment Success — AgentSite">
-  <main class="section-shell hero"><p class="eyebrow">Success</p><h1>Payment completed.</h1><p class="lede">This page is ready for Stripe Payment Link success redirects when live checkout is configured.</p><a class="button secondary" href="/">Return home</a></main>
+<BaseLayout title="Payment Success — AgentSite" robots="noindex,follow">
+  <main id="main" class="section-shell hero compact-page">
+    <p class="eyebrow">Success</p>
+    <h1>Payment completed.</h1>
+    <p class="lede">This page is ready for Stripe Payment Link success redirects when live checkout is configured.</p>
+    <a class="button secondary" href={base}>Return home</a>
+  </main>
 </BaseLayout>

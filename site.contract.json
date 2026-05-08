@@ -1,9 +1,0 @@
-{
-  "siteName": "AgentSite Control Plane",
-  "baseUrl": "https://castiliad.github.io/agentsite-control-plane",
-  "environment": "demo",
-  "paymentMode": "demo",
-  "stripePaymentLinks": ["https://buy.stripe.com/test_PLACEHOLDER"],
-  "requiredSections": ["hero", "contract", "workflow", "payments", "qa", "cta"],
-  "contactEmail": "hello@example.com"
-}
