@@ -1,6 +1,6 @@
 {
   "siteName": "AgentSite Control Plane",
-  "baseUrl": "https://agentsite-control-plane.netlify.app",
+  "baseUrl": "https://castiliad.github.io/agentsite-control-plane",
   "environment": "demo",
   "paymentMode": "demo",
   "purpose": "Demonstrate a contract-driven workflow for agent-maintained landing pages with safe Stripe Payment Link support.",
