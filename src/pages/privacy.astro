@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../content/site';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="Privacy Policy — AgentSite / Hermes Personal Assistant" description="Privacy policy for the AgentSite demo and related Hermes Personal Assistant SMS messaging.">
+  <main id="main" class="section-shell compact-page legal-page">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href={base} aria-label="AgentSite home"><span class="brand-mark" aria-hidden="true"></span> AgentSite</a>
+      <div class="nav-links">
+        <a class="nav-link" href={`${base}sms/`}>SMS</a>
+        <a class="nav-link" href={`${base}terms/`}>Terms</a>
+        <a class="nav-link" href={site.repoUrl}>GitHub</a>
+      </div>
+    </nav>
+
+    <p class="eyebrow">Legal</p>
+    <h1>Privacy Policy</h1>
+    <p class="lede">This policy explains how AgentSite Control Plane and the related Hermes Personal Assistant SMS workflow handle information.</p>
+    <p class="microcopy">Last updated: May 8, 2026</p>
+
+    <section class="text-card legal-card">
+      <h2>Overview</h2>
+      <p>AgentSite Control Plane is a public demonstration website for safe AI-maintained landing pages. Hermes Personal Assistant is a private assistant workflow that may use SMS to send alerts, reminders, status updates, and conversational replies to authorized users.</p>
+
+      <h2>Information we collect</h2>
+      <ul class="plain-list">
+        <li>Website visit information that may be collected by GitHub Pages or the visitor's browser, such as basic request metadata.</li>
+        <li>SMS information when an authorized user texts the service or receives a message, including phone number, message body, timestamps, delivery status, and carrier/Twilio metadata.</li>
+        <li>Operational logs needed to debug delivery, abuse prevention, reliability, and assistant behavior.</li>
+      </ul>
+
+      <h2>How information is used</h2>
+      <p>Information is used to operate the website, deliver requested SMS messages, respond to inbound messages, troubleshoot failures, maintain security, and improve reliability of the private assistant workflow.</p>
+
+      <h2>SMS consent and sharing</h2>
+      <p><strong>SMS opt-in data and consent are not sold, rented, or shared with third parties for marketing or promotional purposes.</strong> SMS data may be processed by service providers, including Twilio, only as needed to deliver and operate messaging.</p>
+
+      <h2>Opt out and help</h2>
+      <p>You may opt out of SMS messages at any time by replying <strong>STOP</strong>. For help, reply <strong>HELP</strong> or visit the <a href={`${base}sms/`}>SMS information page</a>.</p>
+
+      <h2>Retention</h2>
+      <p>SMS and operational records are retained only as long as needed for delivery, troubleshooting, security, compliance, or normal assistant operation, then deleted or minimized when no longer needed.</p>
+
+      <h2>Contact</h2>
+      <p>For questions about this policy, use the public GitHub repository contact path: <a href={site.repoUrl}>{site.repoUrl}</a>.</p>
+    </section>
+  </main>
+</BaseLayout>

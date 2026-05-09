@@ -11,6 +11,8 @@ const paymentHref = isDemoPayment ? '#payment-contract' : site.stripeLink;
         <a class="brand" href={base} aria-label="AgentSite home"><span class="brand-mark" aria-hidden="true"></span> AgentSite</a>
         <div class="nav-links">
           <a class="nav-link" href="#control-plane">Control plane</a>
+          <a class="nav-link" href={`${base}sms/`}>SMS</a>
+          <a class="nav-link" href={`${base}privacy/`}>Privacy</a>
           <a class="nav-link" href={site.repoUrl}>GitHub</a>
         </div>
       </nav>
@@ -144,6 +146,19 @@ const paymentHref = isDemoPayment ? '#payment-contract' : site.stripeLink;
       <div class="hero-actions centered">
         <a class="button primary" href={site.repoUrl}>View source and contract on GitHub</a>
         <a class="button secondary" href="#control-plane">Review the source of truth</a>
+      </div>
+    </section>
+
+    <section id="legal" class="section-shell payment-panel">
+      <div>
+        <p class="eyebrow">Compliance pages</p>
+        <h2>Twilio-ready privacy, terms, and SMS disclosures are published here too.</h2>
+        <p>The same GitHub Pages site also hosts the public messaging disclosures required for Hermes Personal Assistant SMS: opt-in, STOP/HELP, privacy, and terms.</p>
+      </div>
+      <div class="legal-links">
+        <a class="button secondary" href={`${base}sms/`}>SMS info</a>
+        <a class="button secondary" href={`${base}privacy/`}>Privacy</a>
+        <a class="button secondary" href={`${base}terms/`}>Terms</a>
       </div>
     </section>
   </main>

@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../content/site';
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+---
+<BaseLayout title="Terms of Service — AgentSite / Hermes Personal Assistant" description="Terms for the AgentSite demo and related Hermes Personal Assistant SMS messaging.">
+  <main id="main" class="section-shell compact-page legal-page">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href={base} aria-label="AgentSite home"><span class="brand-mark" aria-hidden="true"></span> AgentSite</a>
+      <div class="nav-links">
+        <a class="nav-link" href={`${base}privacy/`}>Privacy</a>
+        <a class="nav-link" href={`${base}sms/`}>SMS</a>
+        <a class="nav-link" href={site.repoUrl}>GitHub</a>
+      </div>
+    </nav>
+
+    <p class="eyebrow">Legal</p>
+    <h1>Terms of Service</h1>
+    <p class="lede">These terms cover use of this public demo website and the related private Hermes Personal Assistant SMS workflow.</p>
+    <p class="microcopy">Last updated: May 8, 2026</p>
+
+    <section class="text-card legal-card">
+      <h2>Use of the site</h2>
+      <p>This website is provided as an informational demo. It does not create a customer relationship, paid subscription, warranty, or professional-service obligation.</p>
+
+      <h2>SMS messaging terms</h2>
+      <p>By texting the configured Twilio number or otherwise opting in as an authorized user, you agree to receive SMS messages from Hermes Personal Assistant. Messages may include assistant replies, reminders, alerts, status updates, and operational notifications.</p>
+      <ul class="plain-list">
+        <li>Message frequency varies based on user requests, alerts, and assistant activity.</li>
+        <li>Message and data rates may apply.</li>
+        <li>Reply <strong>STOP</strong> to opt out of SMS messages.</li>
+        <li>Reply <strong>HELP</strong> for help or visit the <a href={`${base}sms/`}>SMS information page</a>.</li>
+        <li>Consent to SMS messaging is not a condition of purchase.</li>
+      </ul>
+
+      <h2>Authorized use</h2>
+      <p>The SMS workflow is intended for authorized users only. Unauthorized attempts to use the assistant, abuse the messaging endpoint, or impersonate another person are prohibited.</p>
+
+      <h2>No emergency use</h2>
+      <p>Hermes Personal Assistant is not an emergency service. Do not rely on it for emergency, medical, safety-critical, or legally required communications.</p>
+
+      <h2>Changes</h2>
+      <p>These terms may be updated as the demo or assistant workflow changes. Continued use after updates means you accept the updated terms.</p>
+
+      <h2>Privacy</h2>
+      <p>See the <a href={`${base}privacy/`}>Privacy Policy</a> for details about information collection, SMS data, opt-in handling, and sharing limitations.</p>
+    </section>
+  </main>
+</BaseLayout>

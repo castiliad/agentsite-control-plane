@@ -191,7 +191,8 @@ h3 { margin-bottom: 8px; font-size: 20px; }
 .code-panel,
 .workflow-grid article,
 .payment-panel,
-.scenario-card {
+.scenario-card,
+.legal-card {
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(255,255,255,0.065), rgba(255,255,255,0.025));
   box-shadow: var(--shadow);
@@ -253,10 +254,28 @@ h3 { margin-bottom: 8px; font-size: 20px; }
 
 .text-card,
 .code-panel,
-.payment-panel {
+.payment-panel,
+.legal-card {
   padding: 28px;
   border-radius: var(--radius-lg);
 }
+.legal-page h1 { max-width: 980px; }
+.legal-card {
+  margin-top: 34px;
+  max-width: 920px;
+}
+.legal-card h2 {
+  margin-top: 34px;
+  font-size: clamp(24px, 3vw, 34px);
+}
+.legal-card h2:first-child { margin-top: 0; }
+.legal-links {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.legal-links .button { white-space: nowrap; }
 .text-card p,
 .split p,
 .payment-panel p,
@@ -359,6 +378,8 @@ h3 { margin-bottom: 8px; font-size: 20px; }
   .lede { font-size: 18px; }
   .payment-panel { display: block; }
   .payment-panel .button { margin-top: 20px; }
+  .legal-links { justify-content: flex-start; }
+  .legal-links .button { margin-top: 0; }
   .gate-row { grid-template-columns: 1fr; }
   .gate-row strong { text-align: left; }
 }
